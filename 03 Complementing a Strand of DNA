@@ -1,0 +1,16 @@
+def complementar(s):
+    opstrand = ''
+    reverse = ''
+    Dic = {'C':'G','G':'C','A':'T','T':'A'}
+    for i in s:
+        if i in 'ATCG':
+            opstrand += Dic[i]
+    for e in range(len(opstrand)-1, -1, -1):
+        reverse += opstrand[e]
+    return reverse
+
+
+with open('rosalind_revc.txt','r') as file:
+    DNA = file.read()
+
+print(complementar(DNA))
