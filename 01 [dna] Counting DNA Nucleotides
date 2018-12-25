@@ -1,0 +1,18 @@
+def counter(s):
+    A,T,C,G=0,0,0,0
+    for i in s:
+        if i == 'A':
+            A += 1
+        elif i == 'T':
+            T += 1
+        elif i == 'C':
+            C += 1
+        elif i == 'G':
+            G += 1
+    return str(A)+' '+str(C)+' '+str(G)+' '+str(T)
+
+
+with open('rosalind_dna_1_dataset.txt','r') as file:
+    DNA = file.read()
+
+print(counter(DNA))
