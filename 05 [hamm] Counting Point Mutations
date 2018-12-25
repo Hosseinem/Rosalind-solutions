@@ -1,0 +1,12 @@
+def Hamming_distance(first,second):
+    distance = 0
+    for i in range(len(first)):
+        if first[i] != second[i]:
+            distance += 1
+    return distance
+
+
+with open('rosalind_hamm.txt','r') as file:
+    content = file.read()
+s, t=content.splitlines()
+print(Hamming_distance(s, t))
