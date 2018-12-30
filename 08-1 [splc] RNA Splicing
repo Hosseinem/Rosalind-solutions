@@ -1,0 +1,47 @@
+from Transcribing_DNA_into_RNA import transcription
+from Translating_RNA_into_Protein import translation
+
+def splicing_rna(s,lst):
+    start = -1
+    indexes = []
+    for intron in lst:
+        for i in range(len(s)):
+            start = s.find(intron, start + 1)
+            if start != -1:
+                indexes.append([start, len(intron)])
+            else:
+                break
+    indexes.sort()
+    indexes.reverse()
+    monomers = list(s)
+    for ind in indexes:
+        counter = 0
+        while counter != ind[1]:
+            monomers.pop(ind[0])
+            counter += 1
+    exons = ''.join(monomers)
+    RNA = transcription(exons)
+    protein = translation(RNA)
+    return protein
+
+
+
+with open('rosalind_splc6.txt', 'r') as file:
+    content = file.read()
+lst, List= [], []
+splited = content.splitlines()
+for i in range(len(splited)):
+    if splited[i][0] == '>':
+        lst.append(i)
+for j in range(len(lst)-1):
+    i, l = lst[j], ''
+    i += 1
+    if len(lst) > j:
+        while i != lst[j+1]:
+            l += splited[i]
+            i += 1
+        List.append(l)
+List.append(splited[-1])
+s = List.pop(0)
+
+print(splicing_rna(s, List))
