@@ -1,0 +1,26 @@
+def tranration(s1,s2):
+    transversion = 0
+    transition = 0
+    for i in range(len(s1)):
+        if s1[i] != s2[i]:
+            if s1[i] in 'AG' and s2[i] in 'AG' or s1[i] in 'CT' and s2[i] in 'CT':
+                transition += 1
+            else:
+                transversion += 1
+    return transition/transversion
+
+
+with open('rosalind_tran.txt','r') as file:
+    content = file.read()
+DNAs_number, lines, line_number, DNAs = content.count('>'), content.splitlines(), 0, []
+for i in range(DNAs_number):
+    DNA = ''
+    line_number += 1
+    while lines[line_number][0] != '>':
+        DNA += lines[line_number]
+        line_number += 1
+        if line_number+1 > len(lines):
+            break
+    DNAs.append(DNA)
+
+print(tranration(DNAs[0]
