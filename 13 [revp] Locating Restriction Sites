@@ -1,0 +1,24 @@
+from Complementing_a_Strand_of_DNA import complementer as complimentit
+
+
+def resteriction(DNA):
+    records = []
+    for i in range(len(DNA)-3):
+        for length in range(4, 13):
+            if DNA[i:i+length] == complimentit(DNA[i:i+length]):
+                if i+length > len(DNA):
+                    break
+                position = str(i+1) + ' ' + str(length)
+                records.append(position)
+    return records
+
+
+
+with open('rosalind_revp1.txt','r') as file:
+    content = file.read()
+DNA = ''
+for i in range(1,len(content.splitlines())):
+    DNA += content.splitlines()[i]
+record = resteriction(DNA)
+for positions in record:
+    print(positions)
