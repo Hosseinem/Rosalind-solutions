@@ -1,0 +1,33 @@
+from Transcribing_DNA_into_RNA import transcription
+from Translating_RNA_into_Protein import translation
+from Complementing_a_Strand_of_DNA import complementer
+
+
+def find_protein(DNA):
+    proteins = set()
+    for i in range(len(DNA)):
+        if DNA[i:i+3] == 'ATG':
+            DNAlst = []
+            for j in range(i, len(DNA), 3):
+                DNAlst.append(DNA[j:j + 3])
+            if 'TAG' in DNAlst or 'TGA' in DNAlst or 'TAA' in DNAlst:
+                proteins.add(translation(transcription(DNA[i:])))
+    for i in range(len(DNA)):
+        if complementer(DNA)[i:i+3] == 'ATG':
+            DNAlst = []
+            for j in range(i, len(DNA), 3):
+                DNAlst.append(DNA[j:j + 3])
+            if 'TAG' in DNAlst or 'TGA' in DNAlst or 'TAA' in DNAlst:
+                proteins.add(translation(transcription(complementer(DNA)[i:])))
+    proteins = list(proteins)
+    return proteins
+
+
+with open('rosalind_orf3.txt','r') as file:
+    content = file.read()
+DNA = ''
+for i in range(1,len(content.splitlines())):
+    DNA += content.splitlines()[i]
+lst = find_protein(DNA)
+for i in lst:
+    print(i)
