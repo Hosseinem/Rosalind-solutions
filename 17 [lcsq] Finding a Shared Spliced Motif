@@ -1,0 +1,44 @@
+def find_ssm(DNA1, DNA2):
+    mainlst = []
+    for _ in range(len(DNA1)+1):
+        lst = []
+        mainlst.append(lst)
+        for _ in range(len(DNA2)+1):
+            lst.append(0)
+    for i in range(1, len(DNA1)+1):
+        for j in range(1, len(DNA2)+1):
+            if DNA1[i-1] == DNA2[j-1]:
+                mainlst[i][j] = mainlst[i-1][j-1]+1
+            else:
+                mainlst[i][j] = max(mainlst[i-1][j], mainlst[i][j-1])
+
+    m, n, lcmq = len(DNA1), len(DNA2), ''
+    while mainlst[m][n] != 0:
+
+        if mainlst[m][n] == mainlst[m-1][n]:
+            m -= 1
+        elif mainlst[m][n] == mainlst[m][n-1]:
+            n -= 1
+        else:
+            lcmq += DNA1[m-1]
+            m -= 1
+            n -= 1
+    lcmq = list(lcmq)
+    lcmq.reverse()
+    lcmq = ''.join(lcmq)
+    return lcmq
+
+
+with open('test.txt', 'r') as file:
+    content = file.read()
+DNAs_number, lines, line_number, DNAs = content.count('>'), content.splitlines(), 0, []
+for i in range(DNAs_number):
+    DNA = ''
+    line_number += 1
+    while lines[line_number][0] != '>':
+        DNA += lines[line_number]
+        line_number += 1
+        if line_number+1 > len(lines):
+            break
+    DNAs.append(DNA)
+print(find_ssm(DNAs[0], DNAs[1]))
