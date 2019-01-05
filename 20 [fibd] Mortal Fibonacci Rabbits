@@ -1,0 +1,10 @@
+def livemortalrabbirs(months, lifetime):
+    ages = [1] + [0]*(lifetime-1)
+    for i in range(months-1):
+        ages = [sum(ages[1:])] + ages[:-1]
+
+    return sum(ages)
+
+with open('test.txt','r') as file:
+    months, lifetime = map(int, file.read().split(' '))
+print(livemortalrabbirs(months, lifetime))
