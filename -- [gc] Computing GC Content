@@ -1,0 +1,26 @@
+with open('test.txt','r') as file:
+    content = file.read().splitlines()
+final, lst = [], []
+for i in range(len(content)):
+    if content[i][0] == '>':
+        final.append(lst)
+        lst = [content[i][1:]]
+    else:
+        lst.append(content[i])
+final.append(lst)
+final.pop(0)
+Final = []
+for i in range(len(final)):
+    DNA = ''
+    for j in range(1,len(final[i])):
+        DNA += final[i][j]
+    Final.append([final[i][0],DNA])
+GC_content = []
+for i in range(len(Final)):
+    record = "%.6f" % round((Final[i][1].count('C') + Final[i][1].count('G')) / len(Final[i][1])*100, 6)
+    GC_content.append([record, Final[i][0]])
+
+Max = max(GC_content)
+
+print(Max[1])
+print(Max[0])
