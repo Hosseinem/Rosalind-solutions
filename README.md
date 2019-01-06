@@ -20,9 +20,7 @@
 
 - Name: Finding a Motif in DNA             problem's link: [Rosalind page](http://rosalind.info/problems/subs)  and Solution's link: [SUBS Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/07%20%5Bsubs%5D%20Finding%20a%20Motif%20in%20DNA)
 
-- Name: RNA Splicing                       problem's link: [Rosalind page](http://rosalind.info/problems/splc)  and Solution's link: [SPLC Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/08%20%5Bsplc%5D%20RNA%20Splicing)
-
-- Name: RNA Splicing                       problem's link: [Rosalind page](http://rosalind.info/problems/splc)  and Solution's link: [SPLC Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/08%20%5Bsplc%5D%20RNA%20Splicing)
+- Name: RNA Splicing                       problem's link: [Rosalind page](http://rosalind.info/problems/splc)  and Solution's links: [SPLC-1 Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/08-1%20%5Bsplc%5D%20RNA%20Splicing) and [SPLC-2 Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/08-2%20%5Bsplc%5D%20RNA%20Splicing)
 
 - Name: Transitions and Transversions      problem's link: [Rosalind page](http://rosalind.info/problems/tran)  and Solution's link: [TRAN Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/09%20%5Btran%5D%20Transitions%20and%20Transversions)
 
@@ -32,9 +30,7 @@
 
 - Name: Enumerating Gene Orders            problem's link: [Rosalind page](http://rosalind.info/problems/perm)  and Solution's link: [PERM Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/12%20%5Bperm%5D%20Enumerating%20Gene%20Orders)
 
-- Name: Locating Restriction Sites         problem's link: [Rosalind page](http://rosalind.info/problems/revp)  and Solution's link: [REVP Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/13%20%5Brevp%5D%20Locating%20Restriction%20Sites)
-
-- Name: Locating Restriction Sites         problem's link: [Rosalind page](http://rosalind.info/problems/revp)  and Solution's link: [REVP Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/13%20%5Brevp%5D%20Locating%20Restriction%20Sites)
+- Name: Locating Restriction Sites         problem's link: [Rosalind page](http://rosalind.info/problems/revp)  and Solution's links: [REVP-1 Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/13-1%20%5Brevp%5D%20Locating%20Restriction%20Sites) and [REVP-2 Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/13-2%20%5Brevp%5D%20Locating%20Restriction%20Sites)
 
 - Name: Open Reading Frames                problem's link: [Rosalind page](http://rosalind.info/problems/orf)   and Solution's link: [ORF Github page](https://github.com/Hosseinem/Rosalind-solutions/blob/master/14%20%5Borf%5D%20Open%20Reading%20Frames)
 
